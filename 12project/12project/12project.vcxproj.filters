@@ -21,9 +21,15 @@
     <ClCompile Include="ellipse.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="circle.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ellipse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="circle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
