@@ -12,5 +12,7 @@ int main()
 	cout << e[0]->space() << endl;
 	cout << e[1]->equation() << endl;
 	cout << e[1]->space() << endl;
+	delete e[0];
+	delete e[1];
 	return 0;
 }
