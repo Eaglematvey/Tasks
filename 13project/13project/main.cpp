@@ -5,12 +5,10 @@
 using namespace std;
 
 template<class T>
-bool isPolynom(T& v) 
-{
-	//Пустое множество считается палиндромом ?
-	//if (v.empty()) return false;    
-	T::iterator it = v.begin();
-	T::reverse_iterator rit = v.rbegin();
+bool isPolynom(const T& v) 
+{  
+	T::const_iterator it = v.begin();
+	T::const_reverse_iterator rit = v.rbegin();
 	int halfsize = v.size()/2;
 	for (int i = 1; i <= halfsize; i++, ++it, ++rit)
 		if ((*it) != (*rit))
