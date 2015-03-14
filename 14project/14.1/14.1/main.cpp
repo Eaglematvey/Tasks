@@ -24,13 +24,16 @@ int main(int argc, char * argv[])
 	{
 		int i = str1.length() - 1,
 			j = str2.length() - 1;
-		for (i; isdigit(str1[i - 1]); i--);
-		for (j; isdigit(str2[j - 1]); j--);
-		if (i != j)
-			return (i < j);
-		long long num1 = stoll(str1.substr(i)),
-			      num2 = stoll(str2.substr(j));
-		return (num1 < num2);
+		for (i; i != -1 && isdigit(str1[i]); i--);
+		for (j; j != -1 && isdigit(str2[j]); j--);
+		if (i == j)
+		{
+		if (!isdigit(str1[i + 1]) && isdigit(str2[j + 1])) return true;
+		else  if(isdigit(str1[i + 1]) && !isdigit(str2[j + 1])) return false;
+		else if (isdigit(str1[i + 1]) && isdigit(str2[j + 1]))
+			return(stoll(str1.substr(i + 1)) < stoll(str2.substr(j + 1)));
+		}
+		return (i < j);
 	});
 	cout << "Result:" << endl;
 	for (string str : v)
