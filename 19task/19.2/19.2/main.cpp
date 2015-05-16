@@ -1,16 +1,21 @@
 #include<iostream>
 
+long long arrmult[10000];
+
 int main()
 {
-	int nplm =0,
-		nm = 0;
+	long long temp = 0;
+	int nplm = 0,
+		nm = 0,
+		n, m;
 	int arr1[1000], arr2[1000], arrsum[1000];
-	int n = 4;
-	long long arrmult[10000];
+	std::cout << "Enter n:" << std::endl;
+	std::cin >> n;
+	std::cout << "Enter m:" << std::endl;
+	std::cin >> m;
 	std::cout << "Enter arr1:" << std::endl;
 	for (int i = 0; i < n; i++)
 		std::cin >> arr1[i];
-	int m = 5;
 	std::cout << "Enter arr2:" << std::endl;
 	for (int i = 0; i < m; i++)
 		std::cin >> arr2[i];
@@ -22,20 +27,17 @@ int main()
 	ngreaterm:
 		cmp ecx,0
 		jle endprog
-		mov ebx, m
-		dec ebx
-		mov edx,n
-		dec edx
+	
 		xor esi,esi
 	lp1sum :
 		mov arrsum[esi*4],0
-		cmp esi, edx
-		jg jmp1
+		cmp esi, n
+		jge jmp1
 		mov eax, arr1[esi * 4]
 		add arrsum[esi * 4], eax
 	jmp1:
-		cmp esi, ebx
-		jg jmp2
+		cmp esi, m
+		jge jmp2
 		mov eax, arr2[esi * 4]
 		add arrsum[esi * 4], eax
 	jmp2:
@@ -46,17 +48,19 @@ int main()
 		mov nplm,esi
 		xor esi, esi
 		xor edi,edi
-		xor ebx,ebx
+		cmp n,0
+		jle endprog
+		cmp m,0
+		jle endprog
 	lp1mul :
 	lp2mul :
 	   mov eax, arr1[esi * 4]
 	   cdq
 	   imul arr2[edi * 4]
-
-	   mov dword ptr arrmult[ebx * 8],eax
-	   mov dword ptr arrmult[ebx*8 + 4],edx
-
-	    inc ebx
+	   mov ebx,esi
+	   add ebx,edi
+	   add dword ptr arrmult[ebx * 8],eax
+	   adc dword ptr arrmult[ebx*8 + 4],edx
 		inc edi
 		cmp edi,m
 		jl lp2mul
@@ -73,7 +77,7 @@ int main()
 	    for (int i = 0; i < nplm; i++)
 	        std::cout << arrsum[i] << std::endl;
 	std::cout << "Mult:" << std::endl;
-	for (int i = 0; i < nm; i++)
+	for (int i = 0; i <= nm; i++)
 		std::cout << arrmult[i] << std::endl;
 	return 0;
 }

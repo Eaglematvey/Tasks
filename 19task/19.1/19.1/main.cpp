@@ -6,11 +6,9 @@ int main()
 {
 	int temp1 = 2,
 		pow_of_x = 0,
-		j = 1,
-		n = 1;
-	long long m = 4;
-	long double res = 0,
-		x = 1.2;
+		j = 1,n;
+	long long m;
+	long double res = 1,x;
 	cout << "Enter m:" << endl;
 	cin >> m;
 	cout << "Enter n:" << endl;
@@ -77,6 +75,6 @@ int main()
 		fst res
 		progend:
 	}
-	cout << res << endl;
+	cout << "Result:"<<res << endl;
 	return 0;
 }
