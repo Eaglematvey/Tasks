@@ -1,0 +1,5 @@
+Do you like cats?
+How old are you?
+How many questions should I ask?
+What are you afraid of?
+Is it a stupid program?

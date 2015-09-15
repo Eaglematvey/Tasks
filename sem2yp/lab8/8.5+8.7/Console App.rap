@@ -1,0 +1,113 @@
+[Project]
+Assembler=masm
+Type=Console App
+Description=lab 7.1
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+[Files]
+1=Console App.Asm
+[MakeFiles]
+0=Console App.rap
+1=Console App.rc
+2=Console App.asm
+3=Console App.obj
+4=Console App.res
+5=Console App.exe
+6=Console App.def
+7=Console App.dll
+8=Console App.txt
+9=Console App.lib
+10=Console App.mak
+11=Console App.hla
+12=Console App.com
+13=Console App.ocx
+14=Console App.idl
+15=Console App.tlb
+16=Console App.sys
+[MakeDef]
+Menu=0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=5,O,$B\LINK.EXE /SUBSYSTEM:CONSOLE /RELEASE /VERSION:4.0 /LIBPATH:"$L" /OUT:"$5",3
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+7=0,0,"$E\OllyDbg",5
+[Resource]
+[StringTable]
+[Accel]
+[VerInf]
+[Group]
+Group=Added files,Assembly,Resources,Misc,Modules
+1=2
+[VersionControl]
+Settings=1246
+Milestones=129
+MilestoneEvery=10
+MilestoneEveryCurrent=0
+MilestoneOnBuild=0.0.0.0
+MilestoneOnTime=2
+MilestoneOnDate=0
+MilestoneOnDateWhen=1
+MilestoneOnDateStatus=0
+MilestoneOnDateDate=29
+MilestoneOnDateTimeYear=2015
+MilestoneOnDateTimeMonth=6
+MilestoneOnDateTimeDate=28
+MilestoneOnDateTimeHour=1
+MilestoneOnDateTimeMin=0
+MilestoneOnDateTimeSec=4
+MilestoneOnDateTimeStatus=0
+BackupLocation=D:\Kondratjeva_Olga_\RadAsmApp\DosConsole\VCBackups\
+CompressionLevel=0
+DefaultComment=Project $N, $Z, Backup Created On $D At $T.
+ExcludeExt1=\
+ExcludeExt2=\
+ExcludeExt3=\
+ExcludeExt4=\
+FileVerLength=4
+FileVer2Range=0
+FileVer3Range=0
+FileVer4Range=0
+ProductVerLength=4
+ProductVer2Range=0
+ProductVer3Range=0
+ProductVer4Range=0
+[Colref]
+0=00FFFFFF
+1=00FFFFFF
+2=00FFFFFF
+3=00FFFFFF
+4=00FFFFFF
+5=00FFFFFF
+6=00FFFFFF
+7=00FFFFFF
+[Collapse]
+1=
+[Size]
+1=0,0,0,0,1217
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[BreakPoint]
+0=
+[Find]
+1="NAMESAV"
+2="NAMESAC"
+3="CRLF"
+4="NAMEFLD"
+5="NAMELEN"
+6="MAXNLEN"
+7="MAXLNLEN"
+8="StdI"
+9="NAMEPAR"
+10="ESP"
